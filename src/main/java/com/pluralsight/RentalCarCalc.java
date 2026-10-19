@@ -71,17 +71,31 @@ public class RentalCarCalc {
         // TODO - Calculate and dislay to the user:
         // TODO - Basic Car Rental cost
         double basicCarRental = 29.99 * numberOfDays;
-        System.out.printf("The basic car rental fee for %d days is $%.2f", numberOfDays, basicCarRental);
+        System.out.printf("The basic car rental fee for %d days is $%.2f%n", numberOfDays, basicCarRental);
 
         // TODO - Options selected cost
-        double electronicTollTagFee = 3.95 * numberOfDays;
-        double gpsFee = 2.95 * numberOfDays;
-        double aaaFee = 3.95 * numberOfDays;
+        double electronicTollTagFee = 0.00;
+        if (wantsTag) {
+            electronicTollTagFee = 3.95 * numberOfDays;
+        }
+        double gpsFee = 0.00;
+        if (wantsGps) {
+            gpsFee = 2.95 * numberOfDays;
+        }
+        double aaaFee = 0.00;
+        if (wantsAAA) {
+            aaaFee = 3.95 * numberOfDays;
+        }
         double optionalsTotal = electronicTollTagFee + gpsFee + aaaFee;
 
-        System.out.printf("The fee for the optional selections is: $%.2f", optionalsTotal);
-        
+        System.out.printf("The fee for the optional selections is: $%.2f%n", optionalsTotal);
+
         // TODO - underage driver surcharge (if applicable)
+        double underageSurcharge = 0.00;
+        if (driverage < 25) {
+            basicCarRental *= 1.30;
+        }
+        System.out.printf("The fee for ");
         // TODO - total cost / sum
         // Basic car rental is $29.99 per day. 30% surcharge on the basic car rental for drivers under 25. All taxes
         // have been incorporated into the fees shown.
