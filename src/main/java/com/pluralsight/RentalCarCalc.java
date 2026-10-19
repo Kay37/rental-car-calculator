@@ -93,12 +93,17 @@ public class RentalCarCalc {
         // TODO - underage driver surcharge (if applicable)
         double underageSurcharge = 0.00;
         if (driverage < 25) {
-            basicCarRental *= 1.30;
+            underageSurcharge = basicCarRental * .30;
+            System.out.printf("The underage surcharge (under 25) is %.2f%n", underageSurcharge);
+        } else {
+            System.out.println("You have no underage surcharge! Yay! ");
         }
-        System.out.printf("The fee for ");
+
         // TODO - total cost / sum
         // Basic car rental is $29.99 per day. 30% surcharge on the basic car rental for drivers under 25. All taxes
         // have been incorporated into the fees shown.
+        double total = (basicCarRental + optionalsTotal + underageSurcharge);
+        System.out.printf("Your total is $%.2f ", total);
 
     } // ! main method closing bracket
 
