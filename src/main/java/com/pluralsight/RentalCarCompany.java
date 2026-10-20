@@ -41,24 +41,11 @@ public class RentalCarCompany {
         """);
 
         // ? - Ask for how long they will be renting the car.
-//        String duration;
-//        duration = makeColorScheme(GREEN, "How long will you be renting a car for? (e.g. 7 days) \n");
-//        System.out.println(duration);
-//        String durationAnswer = sc.nextLine();
-//        String durationNString = durationAnswer.replaceAll("[^0-9]", "");
-//        int numberOfDays = Integer.parseInt(durationNString);
+
         int numberOfDays = askNumber(GREEN, "How long will you be renting a car for? (e.g. 7 days)\n");
 
         // ? - Ask for their age.
-//        String ageSurcharge;
-//        ageSurcharge = makeColorScheme(RED, """
-//        Drivers under the age of 25 receive a 30% surcharge; how old are
-//        you? (e.g. 26 years old)
-//         """);
-//        System.out.println(ageSurcharge);
-//        String ageAnswer = sc.nextLine();
-//        String ageNString = ageAnswer.replaceAll("[^0-9]", "");
-//        int driverAge = Integer.parseInt(ageNString);
+
         int driverAge = askNumber(RED, """
                 Drivers under the age of 25 receive a 30% surcharge; how old are you? (e.g. 26 years old)
                 """);
@@ -66,31 +53,15 @@ public class RentalCarCompany {
         // ? - Optionals: Ask if they want a toll tag, GPS, or roadside assistance (fee per day)
 
         // ? Toll Tag Query
-//        String electronicTollTag;
-//        electronicTollTag = makeColorScheme(RED, """
-//     Do you want an electronic toll tag for $3.95 per day of rental? (Yes/No)
-//     """);
-//        System.out.println(electronicTollTag);
-//        String electronicTollTagAnswer = sc.nextLine();
-//        boolean wantsTag = electronicTollTagAnswer.equalsIgnoreCase("yes");
+
         boolean wantsTag = askYesNo(RED, "Do you want an electronic toll tag for $3.95 per day of rental? (Yes/No)\n");
 
         // ? GPS Query
-//        String gps;
-//        gps = makeColorScheme(RED, "Do you want a GPS for $2.95 per day of rental? (Yes/No) \n");
-//        System.out.println(gps);
-//        String gpsAnswer = sc.nextLine();
-//        boolean wantsGps = gpsAnswer.equalsIgnoreCase("yes");
+
         boolean wantsGps = askYesNo(RED, "Do you want a GPS for $2.95 per day of rental? (Yes/No) \n");
 
         // ? AAA Query
-//        String aaa;
-//        aaa = makeColorScheme(RED, """
-//        Do you want roadside assistance for $3.95 per day of rental? (Yes/No)
-//        """);
-//        System.out.println(aaa);
-//        String aaaAnswer = sc.nextLine();
-//        boolean wantsAAA = aaaAnswer.equalsIgnoreCase("yes");
+
         boolean wantsAAA = askYesNo(RED, "Do you want roadside assistance for $3.95 per day of rental? (Yes/No)\n");
 
         // TODO - Calculate and dislay to the user:
